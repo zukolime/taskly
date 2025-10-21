@@ -20,7 +20,7 @@ export const ToDoList = (props: { todos: ToDo[] }) => {
 
   const uncheckedList = () => {
     return props.todos
-      .filter((item) => !item.isDone)
+      .filter((item) => item.isDone)
       .map((item, id) => {
         return (
           <ToDoListItem
