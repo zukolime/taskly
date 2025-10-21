@@ -4,7 +4,11 @@ import { ToDo } from '../../models/todo-item';
 
 import './ToDoList.scss';
 
-export const ToDoList = (props: { todos: ToDo[] }) => {
+export const ToDoList = (props: {
+  todos: ToDo[];
+  updateToDo: Function;
+  deleteToDo: Function;
+}) => {
   const checkedList = () => {
     return props.todos
       .filter((item) => !item.isDone)
@@ -13,6 +17,8 @@ export const ToDoList = (props: { todos: ToDo[] }) => {
           <ToDoListItem
             toDoItem={item}
             key={id}
+            updateToDo={props.updateToDo}
+            deleteToDo={props.deleteToDo}
           />
         );
       });
@@ -26,6 +32,8 @@ export const ToDoList = (props: { todos: ToDo[] }) => {
           <ToDoListItem
             toDoItem={item}
             key={id}
+            updateToDo={props.updateToDo}
+            deleteToDo={props.deleteToDo}
           />
         );
       });
