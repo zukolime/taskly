@@ -1,0 +1,16 @@
+.link {
+  text-decoration: none;
+  padding: 10px;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.undone {
+  color: #f50000ab;
+}
+
+.done {
+  color: #09b417;
+}
