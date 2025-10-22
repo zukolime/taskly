@@ -27,11 +27,6 @@ root.render(
           path='/todo'
           component={ToDoListPage}
         />
-        <Route
-          exact
-          path='*'
-          component={ToDoListPage}
-        />
       </Switch>
     </BrowserRouter>
   </React.StrictMode>
