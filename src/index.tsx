@@ -9,6 +9,8 @@ import { ToDoListPage } from './pages/ToDoListPage';
 import './assets/scss/normalize.scss';
 import './assets/scss/style.scss';
 import { ToDo } from './models/todo-item';
+import { NotFound } from './pages/404';
+import { ItemDescription } from './pages/ItemDescription';
 
 const todos: ToDo[] = [
   {
@@ -48,8 +50,18 @@ root.render(
         />
         <Route
           exact
+          path='/list/:id'
+          render={() => <ItemDescription todos={todos} />}
+        />
+        <Route
+          exact
           path='/todo'
           component={ToDoListPage}
+        />
+        <Route
+          exact
+          path='*'
+          component={NotFound}
         />
       </Switch>
     </BrowserRouter>

@@ -1,10 +1,14 @@
 import { ItemList } from '../components/ListItems/ItemList';
 import { ToDo } from '../models/todo-item';
 
-export const HomePage = (props: { todos: ToDo[] }) => {
+interface ComponentProps {
+  todos: ToDo[];
+}
+
+export const HomePage = ({ todos }: ComponentProps) => {
   return (
     <div className='container'>
-      {props.todos.map((todo: ToDo) => {
+      {todos.map((todo: ToDo) => {
         return (
           <ItemList
             todo={todo}
