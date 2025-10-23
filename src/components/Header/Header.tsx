@@ -13,13 +13,13 @@ export const Header = () => {
           to='/'
           className={getActiveClass}
         >
-          Home
+          ToDo
         </NavLink>
         <NavLink
-          to='/todo'
+          to='/list'
           className={getActiveClass}
         >
-          ToDo
+          List
         </NavLink>
       </div>
     </header>
