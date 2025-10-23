@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ToDo } from '../models/todo-item';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 interface ComponentProps {
   todos: ToDo[];
@@ -9,7 +9,7 @@ interface ComponentProps {
 export const ItemDescription = ({ todos }: ComponentProps) => {
   const { id }: any = useParams();
   const [todo, setTodo] = useState<ToDo>();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const searchTodo = todos.find((todo) => String(todo.id) === id);
@@ -17,9 +17,9 @@ export const ItemDescription = ({ todos }: ComponentProps) => {
     if (searchTodo) {
       setTodo(searchTodo);
     } else {
-      history.replace('/404');
+      navigate('/404');
     }
-  }, [todos, id, history]);
+  }, [todos, id, navigate]);
 
   return (
     <div className='container'>

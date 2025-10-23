@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { Header } from './components/Header/Header';
 import { HomePage } from './pages/HomePage';
 import { ToDoListPage } from './pages/ToDoListPage';
 
@@ -11,6 +10,8 @@ import './assets/scss/style.scss';
 import { ToDo } from './models/todo-item';
 import { NotFound } from './pages/404';
 import { ItemDescription } from './pages/ItemDescription';
+import { Layout } from './layouts/Layout';
+import { basename } from 'path';
 
 const todos: ToDo[] = [
   {
@@ -35,35 +36,42 @@ const todos: ToDo[] = [
   },
 ];
 
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Layout />,
+      errorElement: <NotFound />,
+      children: [
+        {
+          path: '/',
+          element: <HomePage todos={todos} />,
+        },
+
+        {
+          path: '/todo',
+          element: <ToDoListPage />,
+        },
+
+        {
+          path: '/list/:id',
+          element: <ItemDescription todos={todos} />,
+        },
+      ],
+    },
+    {
+      path: '*',
+      element: <NotFound />,
+    },
+  ],
+  { basename: '/app' }
+);
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Header />
-      <Switch>
-        <Route
-          exact
-          path='/'
-          render={() => <HomePage todos={todos} />}
-        />
-        <Route
-          exact
-          path='/list/:id'
-          render={() => <ItemDescription todos={todos} />}
-        />
-        <Route
-          exact
-          path='/todo'
-          component={ToDoListPage}
-        />
-        <Route
-          exact
-          path='*'
-          component={NotFound}
-        />
-      </Switch>
-    </BrowserRouter>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
