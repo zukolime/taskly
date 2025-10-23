@@ -1,10 +1,14 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+
 import { Form } from '../components/Form/Form';
 import { ToDoList } from '../components/ToDoList/ToDoList';
 import { ToDo } from '../models/todo-item';
+import { RootState } from '../store';
 
 export const ToDoListPage = () => {
   const [todos, setTodos] = useState<ToDo[]>([]);
+  const toDoList = useSelector((state: RootState) => state.toDoList.todos);
 
   const createNewToDo = (text: string) => {
     const newToDo: ToDo = {
@@ -37,7 +41,7 @@ export const ToDoListPage = () => {
     <>
       <Form createNewToDo={createNewToDo} />
       <ToDoList
-        todos={todos}
+        todos={toDoList}
         updateToDo={updateToDo}
         deleteToDo={deleteToDo}
       />
