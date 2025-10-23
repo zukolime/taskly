@@ -6,7 +6,7 @@ interface ComponentProps {
   todos: ToDo[];
 }
 
-export const ItemDescription = ({ todos }: ComponentProps) => {
+export const ViewListItem = ({ todos }: ComponentProps) => {
   const { id }: any = useParams();
   const [todo, setTodo] = useState<ToDo>();
   const navigate = useNavigate();
