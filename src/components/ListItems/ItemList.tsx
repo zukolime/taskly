@@ -6,14 +6,16 @@ import classes from './ItemList.module.scss';
 export const ItemList = ({ todo }: { todo: ToDo }) => {
   return (
     <>
-      <Link
+      <a
         className={`${classes.link} ${
           todo.isDone ? classes.done : classes.undone
         }`}
-        to={`/list/${todo.id}`}
+        target='_blank'
+        rel='noreferrer'
+        href={`/list/${todo.id}`}
       >
         {todo.text}
-      </Link>
+      </a>
     </>
   );
 };

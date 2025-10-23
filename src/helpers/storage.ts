@@ -13,7 +13,7 @@ export const loadFromLocalStorage = () => {
   try {
     const appState = localStorage.getItem('appState');
     if (!appState) return undefined;
-    return { toDoList: JSON.parse(appState) };
+    return JSON.parse(appState);
   } catch (e) {
     console.warn(e);
     return undefined;
