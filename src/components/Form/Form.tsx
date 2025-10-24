@@ -4,7 +4,14 @@ import { clearValue, setValue } from '../../features/formSlice';
 import { createAction } from '../../features/toDoListSlice';
 import { RootState } from '../../store';
 
-import './Form.scss';
+import {
+  FormBlock,
+  FormControl,
+  FormField,
+  FormLabel,
+  FormWrapper,
+} from './Form.styled';
+import plusIcon from '../../assets/images/plus.png';
 
 export const Form = () => {
   const dispatch = useDispatch();
@@ -20,21 +27,23 @@ export const Form = () => {
   };
 
   return (
-    <div className='form-wrapper'>
-      <form
+    <FormWrapper>
+      <FormBlock
         action='#'
         onSubmit={formSubmit}
       >
-        <label>
-          <input
+        <FormLabel>
+          <FormField
             type='text'
             value={text}
             onChange={(e) => dispatch(setValue(e.target.value))}
-            placeholder='Введите задачу'
           />
-          <button type='submit'></button>
-        </label>
-      </form>
-    </div>
+          <FormControl
+            icon={plusIcon}
+            type='submit'
+          />
+        </FormLabel>
+      </FormBlock>
+    </FormWrapper>
   );
 };
