@@ -4,15 +4,11 @@ import { Form } from '../components/Form/Form';
 import { ToDoList } from '../components/ToDoList/ToDoList';
 import { ToDo } from '../models/todo-item';
 import { RootState } from '../store';
-import { createAction, deleteAction, updateAction } from '../features/toDoList';
+import { deleteAction, updateAction } from '../features/toDoListSlice';
 
 export const ToDoListPage = () => {
   const toDoList = useSelector((state: RootState) => state.toDoList.todos);
   const dispatch = useDispatch();
-
-  const createNewToDo = (text: string) => {
-    dispatch(createAction(text));
-  };
 
   const updateToDo = (toDoItem: ToDo) => {
     dispatch(updateAction(toDoItem));
@@ -24,7 +20,7 @@ export const ToDoListPage = () => {
 
   return (
     <>
-      <Form createNewToDo={createNewToDo} />
+      <Form />
       <ToDoList
         todos={toDoList}
         updateToDo={updateToDo}

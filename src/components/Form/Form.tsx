@@ -1,15 +1,21 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { clearValue, setValue } from '../../features/formSlice';
+import { createAction } from '../../features/toDoListSlice';
+import { RootState } from '../../store';
+
 import './Form.scss';
 
-export const Form = (props: { createNewToDo: Function }) => {
-  const [text, setText] = useState<string>('');
+export const Form = () => {
+  const dispatch = useDispatch();
+  const text = useSelector((state: RootState) => state.form.value);
 
   const formSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    if (text) {
-      props.createNewToDo(text);
-      setText('');
+    if (text.trim()) {
+      dispatch(createAction(text));
+      dispatch(clearValue());
     }
   };
 
@@ -23,11 +29,10 @@ export const Form = (props: { createNewToDo: Function }) => {
           <input
             type='text'
             value={text}
-            onChange={(e) => {
-              setText(e.target.value);
-            }}
+            onChange={(e) => dispatch(setValue(e.target.value))}
+            placeholder='Введите задачу'
           />
-          <button></button>
+          <button type='submit'></button>
         </label>
       </form>
     </div>

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { ToDo } from '../../models/todo-item';
 
 import classes from './ItemList.module.scss';
