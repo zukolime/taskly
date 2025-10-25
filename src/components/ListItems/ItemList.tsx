@@ -1,20 +1,18 @@
 import { ToDo } from '../../models/todo-item';
 
-import classes from './ItemList.module.scss';
+import { ItemLink } from './ItemList.styled';
 
 export const ItemList = ({ todo }: { todo: ToDo }) => {
   return (
     <>
-      <a
-        className={`${classes.link} ${
-          todo.isDone ? classes.done : classes.undone
-        }`}
+      <ItemLink
+        color={`${todo.isDone ? '#09b417' : '#f50000ab'}`}
         target='_blank'
         rel='noreferrer'
         href={`/list/${todo.id}`}
       >
         {todo.text}
-      </a>
+      </ItemLink>
     </>
   );
 };
