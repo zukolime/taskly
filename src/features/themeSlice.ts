@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { Theme } from '../models/model';
+import { Theme } from '../models/theme';
 import { themes } from '../styles/themes';
 
 export interface ThemeState {

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Theme } from '../../models/model';
+import { Theme } from '../../models/theme';
 
 export const FormWrapper = styled.div<{ theme: Theme }>`
   width: 100%;

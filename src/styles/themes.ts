@@ -1,4 +1,4 @@
-import { Theme, Themes } from '../models/model';
+import { Theme, Themes } from '../models/theme';
 
 const light: Theme = {
   name: 'light',
