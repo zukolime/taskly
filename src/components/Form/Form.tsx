@@ -11,11 +11,18 @@ import {
   FormLabel,
   FormWrapper,
 } from './Form.styled';
-import plusIcon from '../../assets/images/plus.png';
+import plusIcon from '../../assets/images/plus.svg';
+import { useRef, useEffect } from 'react';
 
 export const Form = () => {
   const dispatch = useDispatch();
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const text = useSelector((state: RootState) => state.form.value);
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   const formSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -23,6 +30,7 @@ export const Form = () => {
     if (text.trim()) {
       dispatch(createAction(text));
       dispatch(clearValue());
+      inputRef.current?.focus();
     }
   };
 
@@ -36,6 +44,8 @@ export const Form = () => {
           <FormField
             type='text'
             value={text}
+            ref={inputRef}
+            placeholder='Type your plan for world domination 📝'
             onChange={(e) => dispatch(setValue(e.target.value))}
           />
           <FormControl

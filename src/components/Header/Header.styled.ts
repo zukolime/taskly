@@ -1,56 +1,74 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { Theme } from '../../models/theme';
 
-export const HeaderWrapper = styled.header`
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 50px;
-  background-color: #4682b4; 
-  color: #fff;
+export const HeaderWrapper = styled.header<{ theme: Theme }>`
   display: flex;
   align-items: center;
-}`;
-
-export const HeaderContainer = styled.div`
-  color: #fff;
-  max-width: 97%;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 15px;
+  margin: 15px 0;
+  background: ${({ theme }) => theme.colors.backgroundPrimary};
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
 `;
 
-export const HeaderLinkWrapper = styled.div``;
+export const HeaderContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`;
 
-export const HeaderNavLink = styled(NavLink)`
+export const HeaderLinkWrapper = styled.nav`
+  display: flex;
+  gap: 50px;
+`;
+
+export const HeaderNavLink = styled(NavLink)<{ theme: Theme }>`
   text-decoration: none;
-  padding: 10px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
 
   &.active {
-    color: #ffd700;
-    font-weight: bold;
-    border-bottom: 2px solid #ffd700;
+    color: ${({ theme }) => theme.colors.accent};
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 0%;
+    background: ${({ theme }) => theme.colors.accent};
+    transition: width 0.3s ease;
+  }
+
+  &:hover:after {
+    width: 100%;
   }
 `;
 
 export const HeaderThemeSwitcherWrapper = styled.div`
   display: flex;
-  flex-grow: 1;
-  justify-content: flex-end;
+  align-items: center;
 `;
 
-export const HeaderThemeSwitcher = styled.div`
-  padding: 8px;
-  border: 2px solid #ffd700;
-  border-radius: 4px;
+export const HeaderThemeSwitcher = styled.button<{ theme: Theme }>`
+  background: transparent;
+  border: 2px solid ${({ theme }) => theme.colors.accent};
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.accent};
+  transition: 0.3s;
   cursor: pointer;
-  transition: filter 0.2s;
 
   &:hover {
-    filter: invert(100%);
+    background: ${({ theme }) => theme.colors.accent};
+    color: #fff;
   }
 `;

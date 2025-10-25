@@ -3,6 +3,8 @@ export interface Theme {
   colors: {
     backgroundPrimary: string;
     backgroundSecondary: string;
+    text: string;
+    accent: string;
   };
 }
 

@@ -3,16 +3,20 @@ import { Theme, Themes } from '../models/theme';
 const light: Theme = {
   name: 'light',
   colors: {
-    backgroundPrimary: '#4682b4',
-    backgroundSecondary: '#edf0f1',
+    backgroundPrimary: '#ffffff',
+    backgroundSecondary: '#f7f8fa',
+    text: '#000000ff',
+    accent: '#eb72cdff',
   },
 };
 
 const dark: Theme = {
   name: 'dark',
   colors: {
-    backgroundPrimary: 'black',
-    backgroundSecondary: 'gray',
+    backgroundPrimary: '#bcbcbc',
+    backgroundSecondary: '#1d1d1d',
+    text: '#e6edf3',
+    accent: '#497d21',
   },
 };
 

@@ -6,9 +6,9 @@ import {
   ToDoItemControls,
   ToDoItemText,
 } from './ToDoListItem.styled';
-import trashIcon from '../../../assets/images/trash.png';
-import checkIcon from '../../../assets/images/check.png';
-import uncheckIcon from '../../../assets/images/uncheck.png';
+import trashIcon from '../../../assets/images/trash.svg';
+import checkIcon from '../../../assets/images/check.svg';
+import uncheckIcon from '../../../assets/images/uncheck.svg';
 
 export const ToDoListItem = (props: {
   toDoItem: ToDo;

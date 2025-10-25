@@ -1,42 +1,40 @@
 import styled from 'styled-components';
 
 export const ToDoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  padding: 15px;
 `;
 
 export const ToDoListFailed = styled.ul`
   width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
   padding-left: 0;
   list-style: none;
+  border-radius: 12px;
 
   &:empty::after {
-    content: 'Нет задач на выполнение';
+    content: 'Nothing to do — sounds suspicious 🤨';
     width: 100%;
     display: block;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     color: #aaa;
   }
 `;
 
 export const ToDoListCompleted = styled.ul`
   width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
   padding-left: 0;
   list-style: none;
   position: relative;
   padding-top: 60px;
 
   &:empty::after {
-    content: 'Нет выполненных задач';
+    content: 'No completed tasks...';
     width: 100%;
     display: block;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     color: #aaa;
   }
 
