@@ -17,7 +17,7 @@ export const Header = () => {
       <HeaderContainer>
         <HeaderLinkWrapper>
           <HeaderNavLink to='/'>To Do</HeaderNavLink>
-          <HeaderNavLink to='/list'>To Do List</HeaderNavLink>
+          <HeaderNavLink to='/list'>Tasks Overview</HeaderNavLink>
         </HeaderLinkWrapper>
 
         <HeaderThemeSwitcherWrapper>

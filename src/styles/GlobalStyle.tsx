@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import normalize from 'styled-normalize';
 import { Theme } from '../models/theme';
 
@@ -21,25 +21,25 @@ export const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
       background-color: ${({ theme }) => theme.colors.backgroundSecondary};
       transition: background-color 0.2s;
     }
-      
-    .container {      
-      display: flex;
-      flex-direction: column;
-      padding: 16px;
-      margin: 0 auto;
-      gap: 8px;
-      width: 40%;
-      border: 2px solid #6f6f6f;
-      border-radius: 4px;
-      min-height: 240px;
+`;
 
-        &:empty::after {
-          content: 'Nothing to do ¯\_(ツ)_/¯';
-          width: 100%;
-          display: block;
-          text-align: center;
-          font-size: 14px;
-          color: #aaa;
-        }
-    }
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  margin: 0 auto;
+  gap: 8px;
+  width: 40%;
+  border: 2px solid #6f6f6f;
+  border-radius: 4px;
+  min-height: 240px;
+
+  &:empty::after {
+    content: 'Nothing to do ¯\_(ツ)_/¯';
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+  }
 `;

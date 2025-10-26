@@ -7,9 +7,7 @@ export const ItemList = ({ todo }: { todo: ToDo }) => {
     <>
       <ItemLink
         color={`${todo.isDone ? '#09b417' : '#f50000ab'}`}
-        target='_blank'
-        rel='noreferrer'
-        href={`/list/${todo.id}`}
+        to={`/list/${todo.id}`}
       >
         {todo.text}
       </ItemLink>

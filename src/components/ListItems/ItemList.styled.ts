@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const ItemLink = styled.a<{ color: string }>`
+export const ItemLink = styled(Link)<{ color: string }>`
   text-decoration: none;
   position: relative;
   padding-bottom: 4px;

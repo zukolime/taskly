@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { Layout } from './layouts/Layout';
 import { NotFound } from './pages/404/404';
 import { ViewList } from './pages/ViewList';
-import { ViewListItem } from './pages/ViewListItem';
+import { ViewListItem } from './pages/ViewListItem/ViewListItem';
 import { ToDoListPage } from './pages/ToDoListPage';
 
 export const router = createBrowserRouter([

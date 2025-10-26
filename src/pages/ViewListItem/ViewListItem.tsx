@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
-import { ToDo } from '../models/todo-item';
+import { ToDo } from '../../models/todo-item';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { RootState } from '../store';
+import { RootState } from '../../store';
+import { Container } from '../../styles/GlobalStyle';
+import { ViewListItemBackLink, ViewListItemTitle } from './ViewListItem.styled';
 
 export const ViewListItem = () => {
   const toDoList = useSelector((state: RootState) => state.toDoList.todos);
@@ -21,8 +23,11 @@ export const ViewListItem = () => {
   }, [toDoList, id, navigate]);
 
   return (
-    <div className='container'>
-      <h1>{todo?.text}</h1>
-    </div>
+    <>
+      <Container>
+        <ViewListItemTitle>{todo?.text}</ViewListItemTitle>
+      </Container>
+      <ViewListItemBackLink to={'/list'}> ← Back</ViewListItemBackLink>
+    </>
   );
 };
