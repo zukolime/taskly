@@ -5,31 +5,34 @@ import { ViewList } from './pages/ViewList';
 import { ViewListItem } from './pages/ViewListItem/ViewListItem';
 import { ToDoListPage } from './pages/ToDoListPage';
 
-export const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    errorElement: <NotFound />,
-    children: [
-      {
-        path: '/',
-        element: <ToDoListPage />,
-      },
+export const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Layout />,
+      errorElement: <NotFound />,
+      children: [
+        {
+          path: '/',
+          element: <ToDoListPage />,
+        },
 
-      {
-        path: '/list',
-        element: <ViewList />,
-      },
+        {
+          path: '/list',
+          element: <ViewList />,
+        },
 
-      {
-        path: '/list/:id',
-        element: <ViewListItem />,
-      },
+        {
+          path: '/list/:id',
+          element: <ViewListItem />,
+        },
 
-      {
-        path: '*',
-        element: <NotFound />,
-      },
-    ],
-  },
-]);
+        {
+          path: '*',
+          element: <NotFound />,
+        },
+      ],
+    },
+  ],
+  { basename: '/taskly' }
+);
