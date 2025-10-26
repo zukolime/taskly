@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/todo/static/js/main.cf1450f8.js",
+    "static/media/check.svg": "/todo/static/media/check.7612d1fa9a88f7cd59972c4f8a56ae90.svg",
+    "static/media/uncheck.svg": "/todo/static/media/uncheck.3ecac1e47a2212a12d26c1b1cb0318a3.svg",
+    "static/media/plus.svg": "/todo/static/media/plus.c29cd45d87834b91e38d7b1d10799e0a.svg",
+    "index.html": "/todo/index.html",
+    "static/media/trash.svg": "/todo/static/media/trash.b03636047f206865181c71e2eaa7bdf3.svg",
+    "main.cf1450f8.js.map": "/todo/static/js/main.cf1450f8.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.cf1450f8.js"
+  ]
+}
