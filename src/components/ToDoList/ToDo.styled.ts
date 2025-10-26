@@ -27,7 +27,7 @@ export const ToDoListCompleted = styled.ul`
   padding-left: 0;
   list-style: none;
   position: relative;
-  padding-top: 60px;
+  padding-top: 50px;
 
   &:empty::after {
     content: 'No completed tasks...';
