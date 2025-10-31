@@ -46,7 +46,7 @@ export const Container = styled.div`
   padding: 16px;
   margin: 0 auto;
   gap: 8px;
-  width: 40%;
+  width: 80%;
   border: 2px solid #6f6f6f;
   border-radius: 4px;
   min-height: 240px;
