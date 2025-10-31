@@ -6,7 +6,7 @@
 
 ## Использованные технологии 
 
-[![My Skills](https://skillicons.dev/icons?i=react,ts,styledcomponents)](https://skillicons.dev) 
+[![My Skills](https://skillicons.dev/icons?i=react,ts,redux,styledcomponents)](https://skillicons.dev) 
 
 --- 
 ## Особенности и функционал 
@@ -14,6 +14,7 @@
 - Отметка выполнения.
 - Удаление задач.
 - Сохранение данных в LocalStorage.
+- Управление состоянием — Redux.
 - Стилизация через styled-components.
 - Переключение светлой/темной тем.
 - Стилизованная страница 404.
