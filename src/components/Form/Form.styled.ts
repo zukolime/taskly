@@ -22,29 +22,39 @@ export const FormLabel = styled.label`
 export const FormField = styled.input`
   width: 100%;
   color: #000000ff;
-  font-size: 15px;
+  font-size: clamp(0.75rem, 0.713rem + 0.19vw, 0.938rem);
   font-weight: 400;
   padding: 15px;
   background: #ffffff33;
   border-radius: 12px;
   border: 0;
   box-shadow: none;
-  outline: 1px solid #000000ff;
+  border: 1px solid #000000ff;
+
+  &:focus {
+    border-radius: 12px;
+    outline: none;
+    box-shadow: 0px 0px 4px 3px #b3adad;
+  }
 `;
 
 export const FormControl = styled.button<{ icon: string }>`
-  width: 50px;
-  height: 50px;
+  width: clamp(2.5rem, 2.375rem + 0.63vw, 3.125rem);
+  height: clamp(2.5rem, 2.375rem + 0.63vw, 3.125rem);
   background: transparent url(${(props) => props.icon}) no-repeat center/cover;
-
-  border-radius: 12px;
   border: 0;
   box-shadow: none;
   outline: none;
   cursor: pointer;
   transition: opacity 0.2s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 0.7;
+  }
+
+  &:focus {
+    border-radius: 12px;
+    outline: 1px solid #000000ff;
   }
 `;

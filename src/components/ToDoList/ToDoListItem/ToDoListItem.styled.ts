@@ -5,7 +5,7 @@ export const ToDoItem = styled.li<{ theme: Theme }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 18px;
+  font-size: clamp(0.875rem, 0.825rem + 0.25vw, 1.125rem);
   color: #444;
   background-color: ${({ theme }) => theme.colors.backgroundPrimary};
   border-radius: 12px;
@@ -23,13 +23,12 @@ export const ToDoItem = styled.li<{ theme: Theme }>`
 export const ToDoItemText = styled.span``;
 
 export const ToDoItemControls = styled.div`
-  width: 100px;
-  height: 50px;
   display: flex;
 `;
 
 export const ToDoItemControl = styled.button<{ icon: string }>`
-  width: 50px;
+  width: clamp(2.5rem, 2.375rem + 0.63vw, 3.125rem);
+  height: clamp(2.5rem, 2.375rem + 0.63vw, 3.125rem);
   background: transparent url(${(props) => props.icon}) no-repeat center/cover;
   border: 0;
   box-shadow: none;
@@ -37,7 +36,13 @@ export const ToDoItemControl = styled.button<{ icon: string }>`
   cursor: pointer;
   transition: opacity 0.2s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 0.7;
+  }
+
+  &:focus {
+    border-radius: 12px;
+    outline: 1px solid #000000ff;
   }
 `;

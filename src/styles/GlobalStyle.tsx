@@ -5,6 +5,10 @@ import { Theme } from '../models/theme';
 export const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     ${normalize}
 
+    html {
+      font-size: 16px;
+    }
+
     * {
       box-sizing: border-box;
       padding: 0;
@@ -13,17 +17,27 @@ export const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
 
     body {          
       font-family: "Delius", cursive;
-      font-size: 24px;
+      font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
       line-height: 1.429;
       color: ${({ theme }) => theme.colors.text};
       background-color: ${({ theme }) => theme.colors.backgroundSecondary};       
-    }    
+    }
+      
+    @media (max-width: 660px) {
+      html {
+        font-size: 16px;
+      }
+    }
 `;
 
 export const MainContainer = styled.div`
   width: 70%;
   margin: 0 auto;
   transition: background-color 0.2s;
+
+  @media (max-width: 660px) {
+    width: 90%;
+  }
 `;
 
 export const Container = styled.div`

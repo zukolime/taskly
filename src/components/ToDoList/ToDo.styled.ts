@@ -17,7 +17,7 @@ export const ToDoListFailed = styled.ul`
     width: 100%;
     display: block;
     text-align: center;
-    font-size: 14px;
+    font-size: clamp(0.813rem, 0.8rem + 0.06vw, 0.875rem);
     color: #aaa;
   }
 `;
@@ -34,7 +34,7 @@ export const ToDoListCompleted = styled.ul`
     width: 100%;
     display: block;
     text-align: center;
-    font-size: 14px;
+    font-size: clamp(0.813rem, 0.8rem + 0.06vw, 0.875rem);
     color: #aaa;
   }
 

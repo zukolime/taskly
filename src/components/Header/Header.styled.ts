@@ -17,11 +17,17 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+
+  @media (max-width: 405px) {
+    align-items: flex-start;
+  }
 `;
 
 export const HeaderLinkWrapper = styled.nav`
   display: flex;
-  gap: 50px;
+  flex-wrap: wrap;
+  width: 50%;
+  gap: clamp(0.625rem, 0.125rem + 2.5vw, 3.125rem);
 `;
 
 export const HeaderNavLink = styled(NavLink)<{ theme: Theme }>`
@@ -61,7 +67,7 @@ export const HeaderThemeSwitcher = styled.button<{ theme: Theme }>`
   border: 2px solid ${({ theme }) => theme.colors.accent};
   border-radius: 6px;
   padding: 6px 12px;
-  font-size: 16px;
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 1rem);
   font-weight: 600;
   color: ${({ theme }) => theme.colors.accent};
   transition: 0.3s;
