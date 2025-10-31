@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { Header } from '../components/Header/Header';
-import { GlobalStyle } from '../styles/GlobalStyle';
+import { GlobalStyle, MainContainer } from '../styles/GlobalStyle';
 import { ThemeProvider } from 'styled-components';
 
 import { RootState } from '../store';
@@ -14,8 +14,10 @@ export const Layout = () => {
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle theme={theme} />
-        <Header />
-        <Outlet />
+        <MainContainer>
+          <Header />
+          <Outlet />
+        </MainContainer>
       </ThemeProvider>
     </>
   );

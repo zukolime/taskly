@@ -15,12 +15,15 @@ export const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
       font-family: "Delius", cursive;
       font-size: 24px;
       line-height: 1.429;
-      margin: 0 auto;
-      width: 70%;
       color: ${({ theme }) => theme.colors.text};
-      background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-      transition: background-color 0.2s;
-    }
+      background-color: ${({ theme }) => theme.colors.backgroundSecondary};       
+    }    
+`;
+
+export const MainContainer = styled.div`
+  width: 70%;
+  margin: 0 auto;
+  transition: background-color 0.2s;
 `;
 
 export const Container = styled.div`

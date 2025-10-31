@@ -7,12 +7,7 @@ import { store } from './store';
 
 import { router } from './router';
 
-// import './assets/scss/normalize.scss';
-// import './assets/scss/style.scss';
-
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
