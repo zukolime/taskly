@@ -1,10 +1,11 @@
-import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Outlet } from 'react-router-dom';
 
+import { ThemeProvider } from 'styled-components';
 import { Header } from '../components/Header/Header';
 import { GlobalStyle, MainContainer } from '../styles/GlobalStyle';
-import { ThemeProvider } from 'styled-components';
 
+import { Footer } from '../components/Footer/Footer';
 import { RootState } from '../store';
 
 export const Layout = () => {
@@ -17,6 +18,7 @@ export const Layout = () => {
         <MainContainer>
           <Header />
           <Outlet />
+          <Footer />
         </MainContainer>
       </ThemeProvider>
     </>
