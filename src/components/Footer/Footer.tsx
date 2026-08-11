@@ -1,9 +1,6 @@
-import { useDispatch } from 'react-redux';
 import { CreatedBy, CreatedByLink, FooterWrapper } from './Footer.styled';
 
 export const Footer = () => {
-  const disptach = useDispatch();
-
   return (
     <FooterWrapper>
       <CreatedBy>
