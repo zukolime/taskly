@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/taskly/static/js/main.740ea171.js",
+    "main.js": "/taskly/static/js/main.df62ef2f.js",
     "static/media/check.svg": "/taskly/static/media/check.7612d1fa9a88f7cd59972c4f8a56ae90.svg",
     "static/media/uncheck.svg": "/taskly/static/media/uncheck.3ecac1e47a2212a12d26c1b1cb0318a3.svg",
+    "static/media/plus.svg": "/taskly/static/media/plus.41c84bda18a43741bf7845dbf58d8929.svg",
     "index.html": "/taskly/index.html",
-    "static/media/plus.svg": "/taskly/static/media/plus.c29cd45d87834b91e38d7b1d10799e0a.svg",
-    "static/media/trash.svg": "/taskly/static/media/trash.b03636047f206865181c71e2eaa7bdf3.svg",
-    "main.740ea171.js.map": "/taskly/static/js/main.740ea171.js.map"
+    "static/media/trash.svg": "/taskly/static/media/trash.0cd84076b1054ac3f8572e9a5244f563.svg",
+    "main.df62ef2f.js.map": "/taskly/static/js/main.df62ef2f.js.map"
   },
   "entrypoints": [
-    "static/js/main.740ea171.js"
+    "static/js/main.df62ef2f.js"
   ]
 }
